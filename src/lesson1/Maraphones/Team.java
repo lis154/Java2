@@ -20,5 +20,27 @@ public class Team {
         }
     }
 
+    public void infoCommand()
+    {
+        for (Competitor c: command) {
+            c.info();
+        }
+    }
 
+    public void showResults()
+    {
+        for (Competitor c: command) {
+            if (!c.isOnDistance()) {
+                c.info();
+            }
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Competitor[] getCommand() {
+        return command;
+    }
 }

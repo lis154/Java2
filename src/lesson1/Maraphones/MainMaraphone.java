@@ -8,19 +8,10 @@ public class MainMaraphone {
         Competitor[] competitors = {new Human("bob", 200,3, 10), new Cat("Vaska", 200,20,3), new Dog("Bobik", 100,20,30)};
         Obstancle[] course = {new Wall(5), new Water(10), new Cross(100)};
 
-        for (Competitor c: competitors)
-        {
-            for (Obstancle o: course)
-            {
-                o.doit(c);
-                if (!c.isOnDistance()){
-                    break;
-                }
-            }
-        }
-        for (Competitor c: competitors)
-        {
-            c.info();
-        }
+        Team team1 = new Team("command1", competitors);
+        Course course1 = new Course("cource1", course);
+        course1.doIt(team1);
+        team1.showResults();
+        team1.infoAll();
     }
 }
